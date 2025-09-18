@@ -6319,7 +6319,7 @@ ol.wp-block-rss {
   position: relative;
 }
 .footer-widget.widget_meta a:before, .footer-widget.widget_pages a:before, .footer-widget.widget_archive a:before, .footer-widget.widget_categories a:before, .footer-widget.widget_nav_menu a:before {
-  content: "\f105";
+  content: ">";
   font-weight: 400;
   left: 0;
   top: 0;
@@ -6630,7 +6630,7 @@ ol.wp-block-rss {
   position: relative;
 }
 .main-menu ul li.menu-item-has-children > a:after {
-  content: "\f107";
+  content: "<";
   display: inline-block;
   position: relative;
   font-family: var(--icon-font);
@@ -6642,8 +6642,8 @@ ol.wp-block-rss {
   transition: 0.3s ease-in-out;
 }
 .main-menu ul li.menu-item-has-children > a:hover:after {
-  content: "\f106";
-  transform: rotate(180deg);
+  content: "<";
+  transform: rotate(360deg);
   color: var(--theme-color2);
 }
 .main-menu ul li:last-child {
