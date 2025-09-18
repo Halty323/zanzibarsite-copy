@@ -1,34 +1,38 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 
-app.post('/send-email', (req, res) => {
-    const { firstName, lastName, email, telephone, subject, message } = req.body;
+app.post('/send-email', async (req, res) => {
+    const { 'first-name': firstName, 'last-name': lastName, email, telephone, subject, comment: message } = req.body;
 
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'your-email@gmail.com',
-            pass: 'your-email-password'
+            user: 'haltyhalty12@gmail.com',
+            pass: ''
         }
     });
 
     const mailOptions = {
         from: email,
-        to: 'ddeenn_1980@mail.ru',
+        to: 'nikita.posuhov1@gmail.com',
         subject: `Contact Form Submission: ${subject}`,
         text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nTelephone: ${telephone}\nMessage: ${message}`
     };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return res.status(500).send(error.toString());
-        }
-        res.status(200).send('Email sent: ' + info.response);
-    });
+    try {
+        const info = await transporter.sendMail(mailOptions);
+        console.log('Email sent successfully:', info.response);
+        res.status(200).send('Email sent successfully: ' + info.response);
+    } catch (error) {
+        console.error('Email sending failed:', error);
+        res.status(500).send('Failed to send email: ' + error.message);
+    }
 });
 
 const PORT = process.env.PORT || 3000;
