@@ -6,13 +6,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Collect form data
         const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
 
-        // Example: Log form data to console
-        for (let [key, value] of formData.entries()) {
-            console.log(key, value);
-        }
-
-        // TODO: Implement actual form submission logic, e.g., AJAX request to server
+        // Send data to your server
+        fetch('http://localhost:3000/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.text())
+        .then(result => {
+            alert('Your message has been sent successfully!');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to send the message. Please try again later.');
+        });
 
         // Reset the form after submission
         form.reset();
