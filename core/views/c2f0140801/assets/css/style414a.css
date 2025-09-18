@@ -6321,7 +6321,7 @@ ol.wp-block-rss {
   position: relative;
 }
 .footer-widget.widget_meta a:before, .footer-widget.widget_pages a:before, .footer-widget.widget_archive a:before, .footer-widget.widget_categories a:before, .footer-widget.widget_nav_menu a:before {
-  content: "\f105";
+  content: ">";
   font-weight: 400;
   left: 0;
   top: 0;
