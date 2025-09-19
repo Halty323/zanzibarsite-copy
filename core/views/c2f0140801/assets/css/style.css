@@ -7675,7 +7675,7 @@ ol.wp-block-rss {
   position: relative;
 }
 .breadcumb-menu li:after {
-  content: "\f061";
+  content: ">";
   position: relative;
   margin-left: 13px;
   font-weight: 500;
