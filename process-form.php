@@ -34,7 +34,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // Email configuration
-$to = 'submissions@zanzibaronline.online'; // Your email address
+$to = 'applications@zanzibaronline.online'; // Your email address
 $subjectLine = 'Contact Form Submission: ' . $subject;
 $messageBody = "Name: $firstName $lastName\n";
 $messageBody .= "Email: $email\n";
