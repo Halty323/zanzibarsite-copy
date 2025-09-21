@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Send data to your server
-        fetch('http://localhost:3000/send-email', {
+        fetch('https://hiddengardenzanzibar.ru/send-email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
