@@ -1,0 +1,8 @@
+{
+    "name": "hiddengardenzanzibar/server",
+    "description": "PHP server for Hidden Garden Zanzibar",
+    "type": "project",
+    "require": {
+        "php": "^8.2"
+    }
+}
